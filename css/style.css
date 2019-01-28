@@ -3,23 +3,7 @@ html,
 body {
   background-color: black;
 }
-.faded {
-  position: fixed;
-  left: 0;
-  top: -15%;
-  width: 200vw;
-  height: 100%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 1)
-  );
-  z-index: 5;
-}
+
 #wrap {
   position: fixed;
   left: 0;
@@ -38,12 +22,32 @@ body {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-#box video {
+
+.faded { object-fit: cover;
   position: fixed;
-  top: -15%;
-  width: 150vw;
-  margin-left: -25vw;
-  margin-right: -25vw;
+  top:-5%;
+  width: 200%;
+  height: 620px;
+    margin-left: -50vw;
+  margin-right: -50vw;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 1),rgba(0, 0, 0, .5),
+    rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0),
+
+    rgba(0, 0, 0, 1)
+  );
+  z-index: 5; outline:1200px solid black
+}
+#box video {
+  position: absolute;
+  top: -5%;
+  min-height:620px;
+  width: 110vw;
+  height: 80vh;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  object-fit: cover;
   z-index: -2;
 }
 
@@ -80,7 +84,7 @@ body {
 }
 #inbox em.shining {
   position: absolute;
-  width: 150px;
+  width: 45%;
   filter: brightness(1.1) opacity(0.5) contrast(1.5);
   -webkit-transform: skewX(35deg);
   transform: skewX(35deg);
@@ -116,7 +120,7 @@ body {
   left: 0;
   width: 100%;
   height: 48px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   -webkit-transition: background 1s ease-out;
   -moz-transition: background 1s ease-out;
   -o-transition: background 1s ease-out;
@@ -125,7 +129,7 @@ body {
 }
 
 .nav:hover {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.25);
   cursor: pointer;
 }
 .nav ul {
