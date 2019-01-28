@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin");
+html,
+body {
+  background-color: black;
+}
+
+#wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-perspective: 500px;
+  perspective: 500px;
+}
+#box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+#box video {
+  position: fixed;
+  top: -25%;
+  left: -25%;
+  width: 150%;
+}
+
+#inbox {
+  top: 20%;
+  left: 50%;
+  margin: 0;
+  position: relative;
+  -webkit-transform: translateZ(100px) translateX(-110px);
+  transform: translateZ(100px) translateX(-110px);
+}
+#inbox textarea,
+#inbox em {
+  height: 100%;
+  font: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  border: 0;
+  background: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#inbox textarea {
+  position: relative;
+  width: 100%;
+  outline: none;
+  resize: none;
+  -webkit-appearance: none;
+  opacity: 0;
+}
+#inbox em {
+  position: relative;
+  width: 50px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+#inbox em.shining {
+  position: absolute;
+  width: 150px;
+  filter: brightness(1.1) opacity(0.5) contrast(1.5);
+  -webkit-transform: skewX(35deg);
+  transform: skewX(35deg);
+}
+#inbox em.shining em {
+  position: absolute;
+  padding: 0;
+  overflow: visible;
+  -webkit-transform: skewX(-35deg);
+  transform: skewX(-35deg);
+}
+.guide {
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  color: rgba(255, 255, 255);
+  white-space: nowrap;
+  z-index: 1;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+}
+
+.nav {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-transition: background 1s ease-out;
+  -moz-transition: background 1s ease-out;
+  -o-transition: background 1s ease-out;
+  transition: background 1s ease-out;
+  z-index: 1000;
+}
+
+.nav:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.nav ul {
+  list-style: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.nav ul li {
+  display: inline-block;
+}
+
+.nav ul li a {
+  font-family: Josefin, sans-serif;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.25);
+  padding: 14px;
+  transition: color 1s;
+  cursor: pointer;
+}
+
+.nav ul li a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.first {
+  margin-right: -0.17em;
+  border-right: none !important;
+}
+
+.last {
+  margin-left: -0.17em;
+  border-left: none !important;
+}
