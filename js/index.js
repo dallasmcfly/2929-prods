@@ -9,7 +9,7 @@
     shining = document.createElement("em"),
     shininginner = document.createElement("em"),
     guide = document.querySelector(".guide"),
-    maxrotatey = 15,
+    maxrotatey = 10,
     currentpercent = 0,
     areawidth,
     areaheight;
