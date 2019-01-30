@@ -4,22 +4,22 @@
     box = document.getElementById("box"),
     inbox = document.getElementById("inbox"),
     p = inbox.children[0],
-    textarea = p.children[0],
-    clone = document.createElement("em"),
-    shining = document.createElement("em"),
-    shininginner = document.createElement("em"),
+    logo = document.createElement("div"),
+    clone = document.getElementById("logo"),
+    shining = document.createElement("div"),
+    shininginner = document.createElement("div"),
+    shine = document.createElement("img"),
     guide = document.querySelector(".guide"),
-    maxrotatey = 10,
+    maxrotatey = 5,
     currentpercent = 0,
     areawidth,
     areaheight;
 
-  p.appendChild(clone);
-
   shining.className = "shining";
   shining.appendChild(shininginner);
+  logo.appendChild(clone);
   p.appendChild(shining);
-
+  p.appendChild(logo);
   window.addEventListener("resize", resize);
 
   if (
@@ -34,33 +34,33 @@
 
   resize();
   copy();
-  tilt(0);
+  tilt(0.0);
 
   function move(e) {
     var x,
-      halfwidth = areawidth / 2;
+      halfwidth = areawidth / 2.0;
     if (e.alpha || e.beta || e.gamma) {
-      if (!window.orientation || window.orientation == 180) {
+      if (!window.orientation || window.orientation == 180.0) {
         x = e.gamma;
       } else {
-        x = 0 > window.orientation ? -e.beta : e.beta;
+        x = 0.0 > window.orientation ? -e.beta : e.beta;
       }
-      x = areawidth * (Math.max(-30, Math.min(30, x)) + 30) / 60;
+      x = areawidth * (Math.max(-30.0, Math.min(30.0, x)) + 30.0) / 60.0;
     } else {
       x = e.pageX;
     }
-    currentpercent = ((x || 0) - halfwidth) / halfwidth;
-    currentpercent *= -1;
+    currentpercent = ((x || 0.0) - halfwidth) / halfwidth;
+    currentpercent *= -1.0;
     tilt(currentpercent);
     e.preventDefault();
   }
 
   function tilt(percent) {
-    var halfwidth = clone.offsetWidth / 2,
-      left = halfwidth + halfwidth * -percent - shining.offsetWidth / 2;
+    var halfwidth = shining.offsetWidth / 2.0,
+      left = shining.offsetWidth * -percent / 2.0;
     shining.style.left = left + "px";
     shininginner.style.left = -left + "px";
-    box.style.transform = box.style.webkitTransform =
+    p.style.transform = box.style.webkitTransform =
       "rotateY(" + maxrotatey * percent + "deg)";
   }
 
@@ -70,14 +70,14 @@
     areawidth = document.documentElement.offsetWidth;
     areaheight = document.documentElement.offsetHeight;
 
-    gridsize = parseInt(body.style.fontSize) * 1.5;
-    padding = gridsize * Math.ceil(areawidth / 2 / gridsize);
     box.style.left = box.style.top = -padding + "px";
     box.style.padding = padding + "px";
-    box.style.backgroundSize = gridsize + "px " + gridsize + "px";
+    //box.style.backgroundSize = gridsize + "px " + gridsize + "px";
   }
 
   function copy(e) {
-    clone.innerHTML = shininginner.innerHTML = textarea.value;
+    shine.src = clone.src;
+    shininginner.innerHTML =
+      "<img src =" + document.getElementById("logo").src + ">";
   }
 })();
