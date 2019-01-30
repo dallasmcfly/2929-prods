@@ -16,7 +16,6 @@ img {
     background-image: url("/media/bg.png");
   }
 }
-
 #wrap {
   position: fixed;
   left: 0;
@@ -35,7 +34,6 @@ img {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-
 .faded {
   object-fit: cover;
   position: fixed;
@@ -66,7 +64,6 @@ img {
   object-fit: cover;
   z-index: -2;
 }
-
 #inbox {
   z-index: 5;
   top: 30%;
@@ -78,13 +75,12 @@ img {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-
 #inbox:focus {
   opacity: 0;
 }
 #inbox div {
   position: relative;
-  width: 172px;
+  width: 256px;
 }
 #inbox img {
   position: relative;
@@ -92,7 +88,7 @@ img {
 #inbox div.shining {
   position: fixed;
   overflow: hidden;
-  filter: brightness(1.1) opacity(0.5) contrast(1.5);
+  filter: brightness(1.1) opacity(0.25) contrast(1.5);
   -webkit-transform: skewX(35deg);
   transform: skewX(35deg);
   z-index: 6;
@@ -124,7 +120,6 @@ img {
   letter-spacing: 3px;
   color: rgba(255, 255, 255, 0.5);
 }
-
 .nav {
   position: fixed;
   top: 0%;
